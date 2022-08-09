@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
-    <LoginPage/>
-  </div>
+  <LoginPage/>
 </template>
 
 <script>
-import LoginPage from './components/LoginPage.vue'
+import LoginPage from './components/views/LoginPage.vue'
 
 export default {
   name: 'App',

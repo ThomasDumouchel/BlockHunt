@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@altura/altura-js": "^1.0.9",
+    "@vue/cli": "^5.0.8",
     "core-js": "^3.8.3",
     "dotenv": "^16.0.1",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.4",
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
