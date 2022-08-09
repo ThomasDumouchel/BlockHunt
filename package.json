@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@altura/altura-js": "^1.0.9",
     "core-js": "^3.8.3",
+    "dotenv": "^16.0.1",
     "vue": "^2.6.14"
   },
   "devDependencies": {
