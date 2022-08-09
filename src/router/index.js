@@ -1,19 +1,13 @@
-import { createWebHistory, createRouter } from "vue-router"
-import LoginPage from "@/components/views/LoginPage.vue"
+import Vue from 'vue'
+import Router from 'vue-router'
+import LoginPage from '@/components/views/LoginPage.vue'
+import GeoLocationComponent from '@/components/views/GeoLocationComponent.vue'
 
-const routes = [
-    {
-        path: "/",
-        name: "Login",
-        component: LoginPage,
-    },
-]
+Vue.use(Router)
 
-
-
-const router = createRouter({
-    history: createWebHistory(),
-    routes
+export default new Router({
+    routes: [
+        { path: '/login', component: LoginPage },
+        { path: '/geoLocation', component: GeoLocationComponent }
+    ]
 })
-
-export default router

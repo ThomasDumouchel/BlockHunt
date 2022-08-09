@@ -1,6 +1,9 @@
 <template>
     <div class="login">
         <h1>Login page</h1>
+        <v-btn @click="signInUser()">
+            <router-link to = "/geoLocation">Login</router-link>
+        </v-btn>
     </div>
 </template>
 
@@ -10,6 +13,16 @@ export default {
     props: {
         
     },
+    data() {
+        return {
+
+        }
+    },
+    methods:{
+        signInUser(){
+            this.$router.push('')
+        }
+    }
 };
 </script>
 

@@ -9,12 +9,15 @@
   },
   "dependencies": {
     "@altura/altura-js": "^1.0.9",
+    "@mdi/font": "5.9.55",
     "@vue/cli": "^5.0.8",
     "core-js": "^3.8.3",
     "dotenv": "^16.0.1",
+    "roboto-fontface": "*",
     "vue": "^2.6.14",
     "vue-router": "^3.5.4",
-    "vue2-google-maps": "^0.10.7"
+    "vue2-google-maps": "^0.10.7",
+    "vuetify": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -24,6 +27,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "vue-cli-plugin-vuetify": "~2.5.1",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {

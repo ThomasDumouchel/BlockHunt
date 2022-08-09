@@ -25,7 +25,7 @@
         </gmap-map>
     </div>
 </template>
- 
+
 <script>
 export default {
     name: "AddGoogleMap",
