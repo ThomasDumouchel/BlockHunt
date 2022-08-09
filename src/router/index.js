@@ -9,5 +9,6 @@ export default new Router({
     routes: [
         { path: '/login', component: LoginPage },
         { path: '/geoLocation', component: GeoLocationComponent }
+        
     ]
 })
