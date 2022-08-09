@@ -9,12 +9,7 @@ Vue.use(Router)
 export default new Router({
     routes: [
         { path: '/login', component: LoginPage },
-<<<<<<< HEAD
-        { path: '/geoLocation', component: GeoLocationComponent }
-        
-=======
         { path: '/geoLocation', component: GeoLocationComponent },
         { path: '/cache', component: CacheComponent }
->>>>>>> 8b1add6e15078664775684e909e355f3f97cdd1b
     ]
 })
