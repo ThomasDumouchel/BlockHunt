@@ -1,12 +1,19 @@
 <template>
     <div>
-        <v-card :v-for="nfts in nftsList"></v-card>
+        <v-card :v-for="nfts in nftsList">
+            
+        </v-card>
     </div>
 </template>
 
 <script>
+import NFTCard from './NFTCard.vue'
+
 export default {
-    props: [ "nftsList" ]
+    props: [ "nftsList" ],
+    components:{
+        NFTCard,
+    }
 };
 </script>
 
