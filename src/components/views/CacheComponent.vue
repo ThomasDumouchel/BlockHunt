@@ -1,5 +1,6 @@
 <template>
     <div>
+        <BlockHuntHeader text="Cache found"/>
         <div class="pageFormat">
             <h3>Cache Content</h3>
             <NFTsCarousel :nfts="nftsList"/>
@@ -13,12 +14,14 @@
 <script>
 import BottomNavComponent from '@/components/BottomNavComponent.vue'
 import NFTsCarousel from '@/components/NFTsCarousel.vue'
+import BlockHuntHeader from '@/components/BlockHuntHeader.vue'
 
 export default {
     name:"CacheComponent",
     components: {
         BottomNavComponent,
         NFTsCarousel,
+        BlockHuntHeader,
     },
     data() {
         return{
@@ -46,7 +49,5 @@ export default {
 </script>
 
 <style scoped>
-.pageFormat{
-    padding: 20px;
-}
+
 </style>

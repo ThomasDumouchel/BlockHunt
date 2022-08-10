@@ -44,82 +44,31 @@
 </script>
 
 <style scoped lang="scss">
-    .icon {
-        display: flex;
-    }
-
     .card {
         background-color: #15263F;
         color: #8BACD9;
         border-radius: 16px;
-        padding: 24px;
-        width: 327px;
-        font-size: 1.5rem;
+        padding: 12px;
+        width: 200px;
         box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
-        @media screen and (min-width: 768px) {
-            font-size: 1.6rem;
-            width: 350px;
-            padding-bottom: 32px;
-        }
 
         .card__product-img {
-            cursor: pointer;
             position: relative;
             border-radius: 8px;
             overflow: hidden;
 
-            @mixin hoverOpacity {
-                content: "";
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                transition: opacity 0.25s ease-out;
-            }
-
-            &::before {
-                @include hoverOpacity;
-                background-color: cyan;
-            }
-
-            &::after {
-                @include hoverOpacity;
-                
-            }
-
-            &:hover {
-                &::before {
-                    opacity: 0.5;
-                }
-
-                &::after {
-                    opacity: 1;
-                }
-            }
         }
 
         .card__content {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            padding: 24px 0 16px 0;
-
-            @media screen and (min-width: 768px) {
-                gap: 16px;
-                padding: 24px 0;
-            }
+            padding: 24px 0 12px 0;
 
             .card__name {
                 color: white;
                 font-size: 16px;
                 font-weight: bold;
-                cursor: pointer;
-
-                &:hover {
-                    color: #00FFF8;
-                }
             }
 
             .card__description {
@@ -133,20 +82,12 @@
                 justify-content: space-between;
                 padding-top: 4px;
 
-                @media screen and (min-width: 768px) {
-                    padding-top: 6px;
-                }
-
                 >* {
                     display: flex;
                     align-items: center;
-                    gap: 8px;
                     font-weight: 600;
                 }
 
-                .card__price {
-                    color: #00FFF8;
-                }
             }
         }
 
@@ -154,8 +95,7 @@
             display: flex;
             align-items: center;
             border-top: 1px solid #2E405A;
-            gap: 16px;
-            padding-top: 16px;
+            padding-top: 12px;
 
             .card__avatar {
                 display: flex;
