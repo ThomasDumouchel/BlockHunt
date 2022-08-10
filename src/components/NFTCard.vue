@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card__product-img">
-            <img class="card__img" alt="product-image"/> <!-- :src="require('@/static/images/' + img)"> -->
+            <img class="card__img" alt="product-image" :src="img"/>
         </div>
         <div class="card__content">
             <p class="card__name">{{ name }} <span v-if="id">#{{ id }}</span></p>
@@ -30,7 +30,7 @@
 
     export default {
         props: {
-            img: {
+            imgLink: {
                 type: String,
                 default: '',
                 required: true
