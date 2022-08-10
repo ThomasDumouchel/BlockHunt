@@ -16,6 +16,8 @@ import BottomNavComponent from '@/components/BottomNavComponent.vue'
 import NFTsCarousel from '@/components/NFTsCarousel.vue'
 import BlockHuntHeader from '@/components/BlockHuntHeader.vue'
 
+
+
 export default {
     name:"CacheComponent",
     components: {
