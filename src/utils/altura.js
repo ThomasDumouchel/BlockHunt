@@ -7,23 +7,21 @@ async function getNFTData(address) {
     // fetching items with the specified collection address only
     return altura.getItems({}, {collectionAddress: address}).then( (res) => {
         // console.log(res);
+
         if (res.count <= 0) { return [] }
 
         var cards = [];
-        
-        for (var i = 0; i < res.count; i++) {
-            
+        for (const [key, value] of Object.entries(res.items)) {
             cards.push({
-                img: 'test_img',
-                name: 'test_name',
-                description: 'test_desc',
-                autor: 'test_aut',
-                active: false,
-                index: String(i),
+                img: String(value.image),
+                name: String(value.name),
+                description: String(value.description),
+                autor: String(value.creatorAddress),
+                index: String(key),
+                active: false, // default not selected 
             });       
-
         }
-
+        // console.log(cards)
         return cards
     });
 
