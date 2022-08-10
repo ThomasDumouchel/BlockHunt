@@ -1,8 +1,8 @@
 <template>
     <div class="carousel">
-        <v-card class="nftCard" v-for="nft in nfts" :key="nft.index" @click="selectNFT(nft)">
+        <div v-for="nft in nfts" :key="nft.index" @click="selectNFT(nft)" :class="{ nftCard: true, selected: nft.active }">
             <NFTCard :img="nft.img" :name="nft.name" :description="nft.description" :autor="nft.autor" :index="nft.index"/>
-        </v-card>
+        </div>
     </div>
 </template>
 
@@ -27,7 +27,8 @@ export default {
             
             this.selectedNFT = nft;
             nft.active = true;
-            console.log(nft);
+            
+            this.$emit("changeSelectedNFT", nft);
             
         }
     }   
@@ -37,11 +38,14 @@ export default {
 <style>
 .carousel{
     display: flex;
-    margin: 10px;
+    padding: 25px 10px;
     overflow-x: auto;
     white-space: nowrap;
 }
 .nftCard{
     margin: 10px;
+}
+.selected {
+    margin-top: -15px;
 }
 </style>

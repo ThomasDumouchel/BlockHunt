@@ -1,7 +1,7 @@
 <template>
     <div class="view">
         <BlockHuntHeader text="Create your own cache hunt"/>
-        <div class="pageFormat">
+        <div class="pageFormat text-center">
             <div class="content">
                 <div>Participate in the growth of blockhunt by adding your own cache and making other crypto-cachers look for it</div>
                 <div>It's very simple:</div>
@@ -16,12 +16,12 @@
                     <v-textarea :v-model="description" label="cache description" rows="3"></v-textarea>
                 </div>
                 <div>
-                    <p class="stepTitle">Finally, pick an NTF to put in it:</p>
-                    <NFTsCarousel nfts=""/>
+                    <p class="stepTitle">Finally, pick an NTF to put in the cache:</p>
+                    <NFTsCarousel nfts="" @selectedNFT="changeSelectedNFT"/>
                 </div>
             </div>
             <div class="align-right">
-                <v-btn>Create cache</v-btn>
+                <v-btn @click="createCache">Create cache</v-btn>
             </div>
             
         </div>
@@ -34,6 +34,10 @@ import BottomNavComponent from '.././BottomNavComponent.vue'
 import BlockHuntHeader from ".././BlockHuntHeader.vue"
 import NFTsCarousel from ".././NFTsCarousel.vue"
 
+function createNewCache() {
+
+}
+
 export default {
     components: {
         BottomNavComponent,
@@ -44,6 +48,19 @@ export default {
         return {
             name: "",
             description: "",
+            selectedNFT: undefined
+        }
+    },
+    methods: {
+        changeSelectedNFT(e){
+            this.selectedNFT = e.nft;
+        },
+        createCache() {
+            navigator.geolocation.getCurrentPosition(pos => {
+                createNewCache({ name: this.name, description: this.description, nft: this.selectedNFT ,lat: pos.coords.latitude, long: pos.coords.longitude })
+            }).catch(err=> {
+                console.log(err)
+            });
         }
     }
 
@@ -53,6 +70,9 @@ export default {
 <style scoped>
 .content > div {
     margin: 10px 0px;
+}
+.content {
+    padding-bottom: 10px;
 }
 .createCacheSteps > div {
     margin: 10px 0px;
@@ -67,6 +87,9 @@ export default {
 .align-right{
     display: flex;
     justify-content: right;
+}
+.text-center{
+    text-align: center;
 }
 
 </style>
