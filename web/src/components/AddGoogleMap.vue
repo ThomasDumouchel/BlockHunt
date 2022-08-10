@@ -21,10 +21,18 @@
 
 <script>
 import BottomNavComponent from './BottomNavComponent.vue'
+import { getMapsData } from '@/utils/altura';
+
 export default {
     name: "AddGoogleMap",
     components:{
         BottomNavComponent,
+    },
+    async created() {
+        const res = await getMapsData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        console.log(res);
+        // this.pinsList = res;
+        this.initMarker({lat: 39, lng: -100});
     },
     data() {
         return {

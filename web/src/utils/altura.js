@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { Altura } = require("@altura/altura-js")
 const altura = new Altura(process.env.VUE_APP_API_KEY);
 
@@ -21,10 +22,29 @@ async function getNFTData(address) {
                 active: false, // default not selected 
             });       
         }
-        console.log(cards)
+        // console.log(cards)
         return cards
     });
-
 }
 
-export {getNFTData};
+async function getMapsData(address) {
+    return altura.getItems({}, {collectionAddress: address}).then( (res) => {
+        if (res.count <= 0) { return [] }
+
+        // {name, lat, long}
+        var pins = []; 
+        for (const [key, value] of Object.entries(res.items)) {
+            console.log(value.properties);
+            pins.push({
+                name: String(value.name),
+                lat: value.properties.lat,
+                lng: value.properties.long,
+            });
+        }
+        // console.log(pins)
+        return pins
+    });
+}
+
+
+export {getNFTData, getMapsData};
