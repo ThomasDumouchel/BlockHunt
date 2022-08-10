@@ -21,7 +21,7 @@ async function getNFTData(address) {
                 active: false, // default not selected 
             });       
         }
-        // console.log(cards)
+        console.log(cards)
         return cards
     });
 
