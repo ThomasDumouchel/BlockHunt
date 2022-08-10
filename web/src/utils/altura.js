@@ -49,5 +49,17 @@ async function getMapsData(address) {
     });
 }
 
+async function createNewCache() {
 
-export {getNFTData, getMapsData};
+    altura.mintAdditionalSupply(
+        '0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd',
+        1,
+        1,
+        '0x1DF3087438Cc496D62329fEBF899c71a515BCde5')
+    .then((res) => {
+        console.log(res)
+    })
+
+}
+
+export {getNFTData, getMapsData, createNewCache};

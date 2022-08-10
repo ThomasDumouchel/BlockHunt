@@ -34,11 +34,7 @@ import BottomNavComponent from '.././BottomNavComponent.vue'
 import BlockHuntHeader from ".././BlockHuntHeader.vue"
 import NFTsCarousel from ".././NFTsCarousel.vue"
 
-import { getNFTData } from '@/utils/altura';
-
-function createNewCache() {
-
-}
+import { getNFTData, createNewCache } from '@/utils/altura';
 
 export default {
     components: {
@@ -64,11 +60,11 @@ export default {
             this.selectedNFT = e.nft;
         },
         createCache() {
-            navigator.geolocation.getCurrentPosition(pos => {
-                createNewCache({ name: this.name, description: this.description, nft: this.selectedNFT ,lat: pos.coords.latitude, long: pos.coords.longitude })
-            }).catch(err=> {
-                console.log(err)
-            });
+            createNewCache();
+            // navigator.geolocation.getCurrentPosition( () => {
+                
+            //     // createNewCache({ name: this.name, description: this.description, nft: this.selectedNFT ,lat: pos.coords.latitude, long: pos.coords.longitude })
+            // })
         }
     }
 
