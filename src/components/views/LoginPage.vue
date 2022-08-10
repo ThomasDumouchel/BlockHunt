@@ -1,30 +1,30 @@
 <template>
-    <div class="login">
-        <h1>Login page</h1>
-        <v-btn @click="signInUser()">
-            <router-link to = "/geoLocation">Login</router-link>
-        </v-btn>
+    <div id="demo">
+        <vue-metamask 
+            userMessage="msg" 
+            @onComplete="onComplete"
+        >
+        </vue-metamask>
     </div>
 </template>
 
 <script>
-
-export default {
-    name: "LoginPage",
-    props: {
-        
-    },
-    data() {
-        return {
-
-        }
-    },
-    methods:{
-        signInUser(){
-            this.$router.push('')
+    import VueMetamask from 'vue-metamask';
+    export default {
+        components: {
+            VueMetamask,
+        },
+        data(){
+            return {
+                msg: "This is demo net work"
+            }
+        },
+        methods:{
+            onComplete(data){
+                console.log('data:', data);
+            }
         }
     }
-};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
