@@ -7,7 +7,7 @@ const altura = new Altura(process.env.VUE_APP_API_KEY);
 async function getNFTData(address) {
     // fetching items with the specified collection address only
     return altura.getItems({}, {collectionAddress: address}).then( (res) => {
-        // console.log(res);
+        console.log(res);
 
         if (res.count <= 0) { return [] }
 
@@ -29,17 +29,20 @@ async function getNFTData(address) {
 
 async function getMapsData(address) {
     return altura.getItems({}, {collectionAddress: address}).then( (res) => {
+        // console.log(res)
         if (res.count <= 0) { return [] }
 
-        // {name, lat, long}
+        // // {name, lat, long}
         var pins = []; 
         for (const [key, value] of Object.entries(res.items)) {
-            console.log(value.properties);
-            pins.push({
-                name: String(value.name),
-                lat: value.properties.lat,
-                lng: value.properties.long,
-            });
+            if (value.properties.length > 0) {
+                pins.push({
+                    position: {
+                        lat: Number(value.properties[0].value),
+                        lng: Number(value.properties[1].value)
+                    },
+                });
+            }
         }
         // console.log(pins)
         return pins

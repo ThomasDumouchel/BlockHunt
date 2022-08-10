@@ -27,7 +27,7 @@ export default {
     },
     async created() {
         const res = await getNFTData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
-        console.log(res);
+        // console.log(res);
         this.nftsList = res;
     },
     data() {

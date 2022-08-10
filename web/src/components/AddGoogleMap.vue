@@ -32,7 +32,7 @@
 
 <script>
 import BottomNavComponent from './BottomNavComponent.vue'
-// import { getMapsData } from '@/utils/altura';
+import { getMapsData } from '@/utils/altura';
 
 export default {
     name: "AddGoogleMap",
@@ -40,16 +40,16 @@ export default {
         BottomNavComponent,
     },
     async created() {
-        // const res = await getMapsData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        const res = await getMapsData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        // this.markers = [{position: {lat: 43.640234, lng: -79.3534457}}]
         // console.log(res);
-        // this.pinsList = res;
-        this.initMarker({lat: 39, lng: -100});
+        this.markers = res;
     },
     data() {
         return {
             center: {
-                lat: 39.7837304,
-                lng: -100.4458825,
+                lat: 43.640234,
+                lng: -79.3534457,
             },
             markers: [],
             locPlaces: [],
