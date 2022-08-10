@@ -1,25 +1,23 @@
 <template>
-    <div>
-        <BlockHuntHeader text="Create A Cache"/>
+    <div class="view">
+        <BlockHuntHeader text="Create your own cache hunt"/>
         <div class="pageFormat">
             <div class="content">
-                <div>Had fun caching?</div>
-                <div>Participate in the growth of blockhunt by adding your own cache and making other crypto-cachers look for it.</div>
+                <div>Participate in the growth of blockhunt by adding your own cache and making other crypto-cachers look for it</div>
                 <div>It's very simple:</div>
             </div>
             <div class="createCacheSteps">
                 <div>
-                    <p class="stepTitle">Print a QR code on a sticker</p>
+                    <p class="stepTitle">First, give your cache a name:</p>
+                    <v-text-field :v-model="name" label="cache name"></v-text-field>
                 </div>
                 <div>
-                    <p class="stepTitle">Stick it somewhere hard to find</p>
+                    <p class="stepTitle">Second, describe your cache hunt:</p>
+                    <v-textarea :v-model="description" label="cache description" rows="3"></v-textarea>
                 </div>
                 <div>
-                    <p class="stepTitle">Scan it</p>
-                </div>
-                <div>
-                    <p class="stepTitle">Give it a name</p>
-                    <p class="stepDescription">In most cases, users like to give a name that reveals a clue to where the cache is hidden.</p>
+                    <p class="stepTitle">Finally, pick an NTF to put in it:</p>
+                    <NFTsCarousel nfts=""/>
                 </div>
             </div>
             <div class="align-right">
@@ -34,11 +32,19 @@
 <script>
 import BottomNavComponent from '.././BottomNavComponent.vue'
 import BlockHuntHeader from ".././BlockHuntHeader.vue"
+import NFTsCarousel from ".././NFTsCarousel.vue"
 
 export default {
     components: {
         BottomNavComponent,
         BlockHuntHeader,
+        NFTsCarousel,
+    },
+    data() {
+        return {
+            name: "",
+            description: "",
+        }
     }
 
 }

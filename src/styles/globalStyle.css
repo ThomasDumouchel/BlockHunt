@@ -6,4 +6,13 @@
 }
 .pageFormat{
     padding: 20px;
+
+}
+.view{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.view > * {
+    flex: 1 0 auto;
 }

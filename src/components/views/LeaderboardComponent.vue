@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="view">
         <BlockHuntHeader text="Leaderboard"/>
         <div class="pageFormat">
             <v-simple-table>

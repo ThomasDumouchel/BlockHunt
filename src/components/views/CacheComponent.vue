@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="view">
         <BlockHuntHeader text="Cache found"/>
         <div class="pageFormat">
             <h3>Cache Content</h3>

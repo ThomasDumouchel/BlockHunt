@@ -1,10 +1,5 @@
 <template>
     <v-bottom-navigation class="bottomNav" color="primary">
-        <!-- <v-btn>
-            <router-link to="/geoLocation" tag="button">
-                <span>Get Caching</span>
-            </router-link>
-        </v-btn> -->
         <v-btn to="/geoLocation">
             <span>Get Caching</span>
         </v-btn>
@@ -31,9 +26,8 @@ export default {};
 <style scoped>
 .bottomNav {
     width: 100%;
+    height: 60px;
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    flex-shrink: 0;
 }
 </style>

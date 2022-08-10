@@ -18,5 +18,6 @@ export default {
     padding: 10px;
     font-size: 24px;
     border-radius: 0px;
+    max-height: 50px;
 }
 </style>
