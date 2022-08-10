@@ -1,18 +1,29 @@
 <template>
     <div>
         <div>
-            <gmap-map
-            :zoom="14"
-            :center="center"
-            style="width: 100%; height: 600px"
-            >
-            <gmap-marker
-                :key="index"
-                v-for="(m, index) in locationMarkers"
-                :position="m.position"
-                @click="center = m.position"
-            ></gmap-marker>
-        </gmap-map>
+            <GmapMap
+                :center="center"
+                :zoom="14"
+                style="width: 100%; height: 600px"
+                :options="{
+                    zoomControl: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    rotateControl: false,
+                    fullscreenControl: false,
+                    disableDefaultUI: false
+                }"
+                >
+                <GmapMarker
+                    :key="index"
+                    v-for="(m, index) in markers"
+                    :position="m.position"
+                    :clickable="true"
+                    :draggable="true"
+                    @click="center=m.position"
+                />
+            </GmapMap>
         </div>
         
         <BottomNavComponent/>
@@ -32,7 +43,7 @@ export default {
                 lat: 39.7837304,
                 lng: -100.4458825,
             },
-            locationMarkers: [],
+            markers: [],
             locPlaces: [],
             existingPlace: null,
         };

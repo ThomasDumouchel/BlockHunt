@@ -1,5 +1,6 @@
 <template>
     <div class="view">
+        <BlockHuntHeader text="Get Caching"/>
         <AddGoogleMap/>
     </div>
     
@@ -7,10 +8,12 @@
 
 <script>
 import AddGoogleMap from '.././AddGoogleMap.vue'
+import BlockHuntHeader from '.././BlockHuntHeader.vue'
 
 export default {
     components:{
-        AddGoogleMap
+        AddGoogleMap,
+        BlockHuntHeader,
     },
     data() {
         return {

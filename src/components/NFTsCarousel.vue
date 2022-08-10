@@ -27,7 +27,8 @@ export default {
             
             this.selectedNFT = nft;
             nft.active = true;
-            console.log(nft);
+            
+            this.$emit("changeSelectedNFT", nft);
             
         }
     }   
