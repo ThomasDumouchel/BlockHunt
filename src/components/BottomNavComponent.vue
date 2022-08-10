@@ -1,22 +1,26 @@
 <template>
-    <v-bottom-navigation class="bottomNav" :value="value" color="primary">
-        <v-btn>
-            <span>Recents</span>
-
-            <v-icon>mdi-history</v-icon>
+    <v-bottom-navigation class="bottomNav" color="primary">
+        <!-- <v-btn>
+            <router-link to="/geoLocation" tag="button">
+                <span>Get Caching</span>
+            </router-link>
+        </v-btn> -->
+        <v-btn to="/geoLocation">
+            <span>Get Caching</span>
+        </v-btn>
+        
+        <v-btn to="/cache">
+            <span>My nfts + cache</span>
         </v-btn>
 
-        <v-btn>
-            <span>Favorites</span>
-
-            <v-icon>mdi-heart</v-icon>
+        <v-btn to="/createCache">
+            <span>Create Cache</span>
         </v-btn>
 
-        <v-btn>
-            <span>Nearby</span>
-
-            <v-icon>mdi-map-marker</v-icon>
+        <v-btn to="/leaderboard">
+            <span>Leaderboard</span>
         </v-btn>
+
     </v-bottom-navigation>
 </template>
 

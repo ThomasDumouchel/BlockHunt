@@ -1,5 +1,8 @@
 <template>
-    <AddGoogleMap/>
+    <div>
+        <AddGoogleMap/>
+    </div>
+    
 </template>
 
 <script>
@@ -20,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+.pageFormat{
+    padding: 20px;
+}
 </style>

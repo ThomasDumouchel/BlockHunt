@@ -1,21 +1,11 @@
 <template>
     <div>
         <div>
-            <h2>Vue Js Search and Add Marker</h2>
-            <label>
-                <gmap-autocomplete
-                    @place_changed="initMarker"
-                ></gmap-autocomplete>
-                <button @click="addLocationMarker">Add</button>
-            </label>
-            <br />
-        </div>
-        <br />
-        <gmap-map
+            <gmap-map
             :zoom="14"
             :center="center"
             style="width: 100%; height: 600px"
-        >
+            >
             <gmap-marker
                 :key="index"
                 v-for="(m, index) in locationMarkers"
@@ -23,12 +13,19 @@
                 @click="center = m.position"
             ></gmap-marker>
         </gmap-map>
+        </div>
+        
+        <BottomNavComponent/>
     </div>
 </template>
 
 <script>
+import BottomNavComponent from './BottomNavComponent.vue'
 export default {
     name: "AddGoogleMap",
+    components:{
+        BottomNavComponent,
+    },
     data() {
         return {
             center: {
