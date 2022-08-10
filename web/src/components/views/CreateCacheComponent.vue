@@ -43,7 +43,7 @@ export default {
         NFTsCarousel,
     },
     async created() {
-        const res = await getNFTData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        const res = await getNFTData('0x6c8553317be866f283a3a0de25f9b63cfa76bf66');
         console.log(res);
         this.nftsList = res;
     },

@@ -40,7 +40,7 @@ export default {
         BottomNavComponent,
     },
     async created() {
-        const res = await getMapsData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        const res = await getMapsData('0x6c8553317be866f283a3a0de25f9b63cfa76bf66');
         // this.markers = [{position: {lat: 43.640234, lng: -79.3534457}}]
         // console.log(res);
         this.markers = res;
