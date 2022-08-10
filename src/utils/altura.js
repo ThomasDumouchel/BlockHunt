@@ -18,6 +18,7 @@ async function getNFTData(address) {
                 name: 'test_name',
                 description: 'test_desc',
                 autor: 'test_aut',
+                active: false,
                 index: String(i),
             });       
 
