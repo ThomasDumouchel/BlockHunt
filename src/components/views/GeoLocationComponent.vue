@@ -23,7 +23,5 @@ export default {
 </script>
 
 <style scoped>
-.pageFormat{
-    padding: 20px;
-}
+
 </style>

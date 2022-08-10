@@ -16,3 +16,7 @@ export default {
   }),
 };
 </script>
+
+<style>
+@import './styles/globalStyle.css';
+</style>

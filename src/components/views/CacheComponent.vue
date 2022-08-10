@@ -1,5 +1,6 @@
 <template v-if="nftsList">
     <div>
+        <BlockHuntHeader text="Cache found"/>
         <div class="pageFormat">
             <h3>Cache Content</h3>
             <NFTsCarousel :nfts="nftsList"/>
@@ -13,6 +14,7 @@
 <script>
 import BottomNavComponent from '@/components/BottomNavComponent.vue'
 import NFTsCarousel from '@/components/NFTsCarousel.vue'
+import BlockHuntHeader from '@/components/BlockHuntHeader.vue'
 
 import { getNFTData } from '@/utils/altura';
 
@@ -21,6 +23,7 @@ export default {
     components: {
         BottomNavComponent,
         NFTsCarousel,
+        BlockHuntHeader,
     },
     async created() {
         const res = await getNFTData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
@@ -54,7 +57,5 @@ export default {
 </script>
 
 <style scoped>
-.pageFormat{
-    padding: 20px;
-}
+
 </style>
