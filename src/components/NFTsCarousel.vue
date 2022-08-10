@@ -19,10 +19,6 @@ export default {
             selectedNFT: undefined,
         }
     },
-    beforeMount() {
-        this.nfts.map(obj => ({ ...obj, active: false }));
-    
-    },
     methods: {
         selectNFT(nft){
             this.nfts.forEach(nft => {
@@ -33,7 +29,6 @@ export default {
             nft.active = true;
             console.log(nft);
             
-
         }
     }   
 }
