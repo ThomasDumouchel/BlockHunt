@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <v-card class="card">
         <div class="card__product-img">
             <img class="card__img" alt="product-image" :src="img"/>
         </div>
@@ -10,7 +10,7 @@
         <div class="card__footer">
             <p class="card__autor">Creation of <span class="card__autor--alt-color">{{ autor }}</span></p>
         </div>
-    </div>
+    </v-card>
 </template>
 
 <script>
@@ -49,7 +49,7 @@
         color: #8BACD9;
         border-radius: 16px;
         padding: 12px;
-        width: 200px;
+        width: 250px;
         box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
 
@@ -57,27 +57,33 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
+            width: 100%;
 
         }
 
         .card__content {
+            width:100%;
             display: flex;
             flex-direction: column;
             padding: 24px 0 12px 0;
 
             .card__name {
+                width:100%;
+
                 color: white;
                 font-size: 16px;
                 font-weight: bold;
             }
 
             .card__description {
+                width:100%;
                 font-size: 12px;
                 line-height: 2.6rem;
                 font-weight: lighter;
             }
 
             .card__content-bottom {
+                width:100%;
                 display: flex;
                 justify-content: space-between;
                 padding-top: 4px;
@@ -97,23 +103,10 @@
             border-top: 1px solid #2E405A;
             padding-top: 12px;
 
-            .card__avatar {
-                display: flex;
-                border-radius: 90px;
-                border: 1px solid white;
-
-                img {
-                    width: 33px;
-                }
-            }
-
             .card__autor--alt-color {
                 color: white;
-                cursor: pointer;
+                font-size: 10px;
 
-                &:hover {
-                    color: #00FFF8;
-                }
             }
         }
     }

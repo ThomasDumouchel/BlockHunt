@@ -1,8 +1,8 @@
 <template>
     <div class="carousel">
-        <v-card  v-for="nft in nfts" :key="nft.index" @click="selectNFT(nft)" :class="{ selected: nft.active, nftCard: true }">
-            <NFTCard :img="nft.imgLink" :name="nft.name" :description="nft.description" :autor="nft.autor" :index="nft.index"/>
-        </v-card>
+        <div v-for="nft in nfts" :key="nft.index" @click="selectNFT(nft)" :class="{ nftCard: true, selected: nft.active }">
+            <NFTCard :img="nft.img" :name="nft.name" :description="nft.description" :autor="nft.autor" :index="nft.index"/>
+        </div>
     </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
 <style>
 .carousel{
     display: flex;
-    margin: 10px;
+    padding: 25px 10px;
     overflow-x: auto;
     white-space: nowrap;
 }
