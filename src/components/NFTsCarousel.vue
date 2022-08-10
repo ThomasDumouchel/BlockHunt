@@ -1,7 +1,7 @@
 <template>
     <div class="carousel">
         <v-card class="nftCard" v-for="nft in nfts" :key="nft.index">
-            <NFTCard :img="nft.imgLink" :name="nft.name" :description="nft.description" :autor="nft.autor" :id="nft.index"/>
+            <NFTCard :img="nft.imgLink" :name="nft.name" :description="nft.description" :autor="nft.autor" :index="nft.index"/>
         </v-card>
     </div>
 </template>
