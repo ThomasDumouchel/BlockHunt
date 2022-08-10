@@ -5,11 +5,10 @@ import vuetify from './plugins/vuetify'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 import router from './router'
-// require('dotenv').config()
+
 Vue.config.productionTip = false
 Vue.use(VueGoogleMaps, {
   load: { 
-    // eslint-disable-next-line
     key: process.env.VUE_APP_GOOGLE_MAPS_API_KEY,
     libraries: "places"
   }

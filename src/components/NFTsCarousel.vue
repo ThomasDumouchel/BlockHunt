@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-card :v-for="nfts in nftsList">
-            <NFTCard :img="" :name="" description="" id="" price="" time="" autor="" avatar=""/>
+            <NFTCard img="" name="" description="" id="" price="" time="" autor="" avatar=""/>
         </v-card>
     </div>
 </template>
@@ -13,6 +13,20 @@ export default {
     props: [ "nftsList" ],
     components:{
         NFTCard,
+    },
+    data() {
+        return {
+            items: [
+                {
+                    imgLink: "",
+                    name: "",
+                    description: "",
+                    price: "",
+                    autor: ""
+
+                }
+            ]
+        }
     }
 };
 </script>

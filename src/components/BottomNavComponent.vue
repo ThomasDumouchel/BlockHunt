@@ -1,18 +1,4 @@
 <template>
-    <!-- <div class="bottomNav">
-        <div class="navElem">
-            <h1>Nav1</h1>
-        </div>
-        <div class="navElem">
-            <h1>Nav2</h1>
-        </div>
-        <div class="navElem">
-            <h1>Nav3</h1>
-        </div>
-        <div class="navElem">
-            <h1>Nav4</h1>
-        </div>
-    </div> -->
     <v-bottom-navigation class="bottomNav" :value="value" color="primary">
         <v-btn>
             <span>Recents</span>

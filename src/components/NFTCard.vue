@@ -1,30 +1,26 @@
 <template>
     <div class="card">
         <div class="card__product-img">
-            <img class="card__img" alt="product-image" :src="require('@/static/images/' + img)">
+            <img class="card__img" alt="product-image"/> <!-- :src="require('@/static/images/' + img)"> -->
         </div>
         <div class="card__content">
             <p class="card__name">{{ name }} <span v-if="id">#{{ id }}</span></p>
             <p class="card__description" v-if="description">{{ description }}</p>
             <div class="card__content-bottom">
                 <div class="card__price">
-                    <div class="icon">
-                        <img src="@/assets/images/nft-card/icon-ethereum.svg" alt="">
-                    </div>
+                    <!-- <div class="icon">
+                        <img src="" alt="">
+                    </div> -->
                     <p>{{ price }} ETH</p>
                 </div>
                 <div v-if="time" class="card__time">
-                    <div class="icon">
-                        <img src="@/assets/images/nft-card/icon-clock.svg" alt="">
-                    </div>
-                    <p>{{ time }} days left</p>
+                    <!-- <div class="icon">
+                        <img src="" alt="">
+                    </div> -->
                 </div>
             </div>
         </div>
         <div class="card__footer">
-            <div class="card__avatar">
-                <img :src="require('@/static/images/' + avatar)" alt="avatar-image">
-            </div>
             <p class="card__autor">Creation of <span class="card__autor--alt-color">{{ autor }}</span></p>
         </div>
     </div>
@@ -57,18 +53,10 @@
                 default: 0,
                 required: true
             },
-            time: {
-                type: [String, Number],
-                default: ''
-            },
             autor: {
                 type: String,
                 default: ''
-            },
-            avatar: {
-                type: String,
-                default: '',
-            },
+            }
         },
     }
 </script>
@@ -116,7 +104,7 @@
 
             &::after {
                 @include hoverOpacity;
-                background: no-repeat url(../../assets/images/nft-card/icon-view.svg) center;
+                
             }
 
             &:hover {
