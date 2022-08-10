@@ -9,6 +9,8 @@
 import BottomNavComponent from '@/components/BottomNavComponent.vue'
 import NFTsCarousel from '@/components/NFTsCarousel.vue'
 
+
+
 export default {
     components: {
         BottomNavComponent,
