@@ -1,4 +1,4 @@
-<template>
+<template v-if="nftsList">
     <div class="view">
         <BlockHuntHeader text="Create your own cache hunt"/>
         <div class="pageFormat text-center">
@@ -17,10 +17,10 @@
                 </div>
                 <div>
                     <p class="stepTitle">Finally, pick an NTF to put in the cache:</p>
-                    <NFTsCarousel nfts="" @selectedNFT="changeSelectedNFT"/>
+                    <NFTsCarousel :nfts="nftsList" @selectedNFT="changeSelectedNFT"/>
                 </div>
             </div>
-            <div class="align-right">
+            <div class="align-right hacky_fix">
                 <v-btn @click="createCache">Create cache</v-btn>
             </div>
             
@@ -34,6 +34,8 @@ import BottomNavComponent from '.././BottomNavComponent.vue'
 import BlockHuntHeader from ".././BlockHuntHeader.vue"
 import NFTsCarousel from ".././NFTsCarousel.vue"
 
+import { getNFTData } from '@/utils/altura';
+
 function createNewCache() {
 
 }
@@ -44,8 +46,14 @@ export default {
         BlockHuntHeader,
         NFTsCarousel,
     },
+    async created() {
+        const res = await getNFTData('0x73ed40f253d10764b9bf8c4e8f2dc3312a940fdd');
+        console.log(res);
+        this.nftsList = res;
+    },
     data() {
         return {
+            nftsList: null,
             name: "",
             description: "",
             selectedNFT: undefined
@@ -91,5 +99,7 @@ export default {
 .text-center{
     text-align: center;
 }
-
+.hacky_fix{
+    padding-bottom: 50px;
+}
 </style>
