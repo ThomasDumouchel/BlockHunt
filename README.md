@@ -1,24 +1,11 @@
-# blockhunt
+![alt text](./src/assets/ETHToronto%20Blockhunt%20Logo.png)
+# Blockhunt
 
-## Project setup
-```
-npm install
-```
+## About 
+Blockhunt is an interactive game which challenges users to go out in the real world to explore, solve puzzles and earn rewards in their quest to find treasures. Learn more by checking out [our presentation](http://www.google.com).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Getting Started
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Set Up
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Documentation
