@@ -17,7 +17,7 @@ async function getNFTData(address) {
                 img: String(value.image),
                 name: String(value.name),
                 description: String(value.description),
-                autor: String(value.creatorAddress),
+                autor: String(value.creatorAddress).slice(0,4) + "..." + String(value.creatorAddress).slice(-4),
                 index: String(key),
                 active: false, // default not selected 
             });       
