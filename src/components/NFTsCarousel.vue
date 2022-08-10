@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <v-card :v-for="nfts in nftsList">
-            <NFTCard img="" name="" description="" id="" price="" time="" autor="" avatar=""/>
+    <div class="carousel">
+        <v-card class="nftCard" v-for="nft in nfts" :key="nft.index">
+            <NFTCard :img="nft.imgLink" :name="nft.name" :description="nft.description" :autor="nft.autor" :id="nft.index"/>
         </v-card>
     </div>
 </template>
@@ -10,27 +10,26 @@
 import NFTCard from './NFTCard.vue'
 
 export default {
-    props: [ "nftsList" ],
+    props: [ "nfts" ],
     components:{
         NFTCard,
     },
     data() {
         return {
-            items: [
-                {
-                    imgLink: "",
-                    name: "",
-                    description: "",
-                    price: "",
-                    autor: ""
-
-                }
-            ]
+            
         }
     }
 };
 </script>
 
 <style>
-
+.carousel{
+    display: flex;
+    margin: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.nftCard{
+    margin: 10px;
+}
 </style>

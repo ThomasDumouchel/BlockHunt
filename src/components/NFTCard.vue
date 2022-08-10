@@ -4,21 +4,8 @@
             <img class="card__img" alt="product-image" :src="img"/>
         </div>
         <div class="card__content">
-            <p class="card__name">{{ name }} <span v-if="id">#{{ id }}</span></p>
+            <p class="card__name">{{ name }}</p>
             <p class="card__description" v-if="description">{{ description }}</p>
-            <div class="card__content-bottom">
-                <div class="card__price">
-                    <!-- <div class="icon">
-                        <img src="" alt="">
-                    </div> -->
-                    <p>{{ price }} ETH</p>
-                </div>
-                <div v-if="time" class="card__time">
-                    <!-- <div class="icon">
-                        <img src="" alt="">
-                    </div> -->
-                </div>
-            </div>
         </div>
         <div class="card__footer">
             <p class="card__autor">Creation of <span class="card__autor--alt-color">{{ autor }}</span></p>
@@ -30,7 +17,7 @@
 
     export default {
         props: {
-            imgLink: {
+            img: {
                 type: String,
                 default: '',
                 required: true
@@ -44,18 +31,13 @@
                 type: String,
                 default: ''
             },
-            id: {
-                type: [String, Number],
-                default: null
-            },
-            price: {
-                type: Number,
-                default: 0,
-                required: true
-            },
             autor: {
                 type: String,
                 default: ''
+            },
+            index: {
+                type: String,
+                required: true
             }
         },
     }
@@ -131,7 +113,7 @@
 
             .card__name {
                 color: white;
-                font-size: 2.2rem;
+                font-size: 16px;
                 font-weight: bold;
                 cursor: pointer;
 
@@ -141,7 +123,7 @@
             }
 
             .card__description {
-                font-size: 1.8rem;
+                font-size: 12px;
                 line-height: 2.6rem;
                 font-weight: lighter;
             }
