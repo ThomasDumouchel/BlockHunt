@@ -9,3 +9,6 @@ Blockhunt is an interactive game which challenges users to go out in the real wo
 ## Set Up
 
 ## Documentation
+
+## Note:
+Thomas used his work git account during the hackathon.
